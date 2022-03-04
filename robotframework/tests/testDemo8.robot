@@ -12,7 +12,7 @@ ${book_id}
 ${book_name}        RobotFramework
 ${SMTP_SERVER}      smtp.gmail.com
 ${USER}             tarunjaiswal92@gmail.com
-${PASS}             skkdlttwiuzvaiij
+${PASS}             skkdlttwiuzvaii.
 ${TO}               tarunjaiswal92@gmail.com
 ${subject}          Testing Mail
 ${TEXT_MESSAGE}     Welcome to robot framework community
