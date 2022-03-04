@@ -1,0 +1,44 @@
+---
+# file: roles/common/tasks/main.yml
+
+- name: Install ntp
+  ansible.builtin.yum:
+    name: ntp
+    state: present
+  tags: ntp
+
+- name: Configure ntp
+  ansible.builtin.template:
+    src: ntp.conf.j2
+    dest: /etc/ntp.conf
+  notify:
+  - restart ntpd
+  tags: ntp
+
+- name: Enable and run ntpd
+  ansible.builtin.service:
+    name: ntpd
+    state: started
+    enabled: yes
+  tags: ntp
+
+- name: Install NFS utils
+  ansible.builtin.yum:
+    name:
+    - nfs-utils
+    - nfs-util-lib
+    state: present
+  tags: filesharing
+
+
+# --tags all - run all tasks, ignore tags (default behavior)
+
+# --tags [tag1, tag2] - run only tasks with either the tag tag1 or the tag tag2
+
+# --skip-tags [tag3, tag4] - run all tasks except those with either the tag tag3 or the tag tag4
+
+# --tags tagged - run only tasks with at least one tag
+
+# --tags untagged - run only tasks with no tags
+
+# ansible-playbook example.yml --tags "configuration,packages"

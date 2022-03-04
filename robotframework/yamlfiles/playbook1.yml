@@ -1,0 +1,30 @@
+---
+- name: update web servers
+  hosts: webserver
+  remote_user: root
+
+  tasks:
+    - name: ensure apache at latest version
+      yum:
+        name: httpd
+        state: latest
+
+    - name: write the apace config file
+      template:
+        src: /srv/file/j2.cfg
+        dest: /srv/filedest/http.conf
+
+- name: update the db server
+  hosts: databases
+  remote_user: root
+
+  tasks:
+    - name: ensure the postgres is latest version
+      yum:
+        name: postgresql
+        state: latest
+
+    - name: ensure the postgre is started
+      yum:
+        name: postgresql
+        state: started

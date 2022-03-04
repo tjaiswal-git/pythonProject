@@ -1,0 +1,21 @@
+# restarts.yml
+- name: Restart apache
+  ansible.builtin.service:
+    name: apache
+    state: restarted
+
+- name: Restart mysql
+  ansible.builtin.service:
+    name: mysql
+    state: restarted
+
+
+
+- name: Trigger an included (dynamics) handlers
+  hosts: localhost
+  handlers:
+    - name: Restart services
+      include_tasks: restarts.yml
+  tasks:
+    - command: true
+      notify: Restart services

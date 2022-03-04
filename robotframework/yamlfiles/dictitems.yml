@@ -1,0 +1,9 @@
+vars:
+  hosts:
+    testHost1: 10.71.31.23
+    testHost2: 10.323.23.32
+
+  tasks:
+    - debug:
+        msg: '{{ item }}'
+      loop: "{{ hosts.item() | list }}"

@@ -1,0 +1,42 @@
+==============================================================================
+Tests                                                                         
+==============================================================================
+Tests.testDemo1 :: To Valid the login page                                    
+==============================================================================
+Select the Form and navigate to child window                          | FAIL |
+ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=98.0.4758.102)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0027FDC3+2555331]
+	Ordinal0 [0x002177F1+2127857]
+	Ordinal0 [0x00112CD0+1060048]
+	Ordinal0 [0x0013F3AE+1242030]
+	Ordinal0 [0x00134FB3+1200051]
+	Ordinal0 [0x00157B0C+1342220]
+	Ordinal0 [0x00134984+1198468]
+	Ordinal0 [0x00157C14+1342484]
+	Ordinal0 [0x001675FA+1406458]
+	Ordinal0 [0x00157976+1341814]
+	Ordinal0 [0x001336B6+1193654]
+	Ordinal0 [0x00134546+1197382]
+	GetHandleVerifier [0x00419622+1619522]
+	GetHandleVerifier [0x004C882C+2336844]
+	GetHandleVerifier [0x003123E1+541697]
+	GetHandleVerifier [0x00311443+537699]
+	Ordinal0 [0x0021D18E+2150798]
+	Ordinal0 [0x00221518+2168088]
+	Ordinal0 [0x00221660+2168416]
+	Ordinal0 [0x0022B330+2208560]
+	BaseThreadInitThunk [0x7639F989+25]
+	RtlGetAppContainerNamedObjectPath [0x779274B4+228]
+	RtlGetAppContainerNamedObjectPath [0x77927484+180]
+	(No symbol) [0x00000000]
+------------------------------------------------------------------------------
+Tests.testDemo1 :: To Valid the login page                            | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Tests                                                                 | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+Output:  C:\Users\tarun.jaiswal\PycharmProjects\pythonProject\robotframework\tests\pabot_results\0\output.xml

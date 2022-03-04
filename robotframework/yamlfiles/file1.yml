@@ -1,0 +1,43 @@
+---
+- name: change hostnames
+  hosts: web
+  become: true
+  vars:
+    url: "https://example.com/users/foo/resources/bar"
+  tasks:
+
+  - name: change hostnames for device
+    hostname:
+      name: "{{inventory_hostname}}"
+
+  - name: "Human Readable"
+    assert:
+      that:
+        - '"1.00 Bytes" == 1|human_readable'
+        - '"1.00 bits" == 1|human_readable(isbits=True)'
+        - '"10.00 KB" == 10240|human_readable'
+        - '"97.66 MB" == 102400000|human_readable'
+        - '"0.10 GB" == 102400000|human_readable(unit="G")'
+        - '"0.10 Gb" == 102400000|human_readable(isbits=True, unit="G")'
+
+  - debug:
+      msg: "matched pattern 1"
+    when: url is match("https://example.com/users/.*/resources")
+
+  - debug:
+      msg: "matched pattern 2"
+    when: url is search("users/.*/resources/.*")
+
+  - debug:
+      msg: "matched pattern 3"
+    when: url is search("users")
+
+  - debug:
+      msg: "Truthy"
+    when: value is truthy
+    vars:
+      value: "some string"
+  - debug:
+      msg: value is falsy
+    vars:
+      value: ""

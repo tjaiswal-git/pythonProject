@@ -1,0 +1,6 @@
+*** Test Cases ***,${username},${password}
+Invalid username,tarun,learning
+Invalid password,rahulsetteyacedemy,aafaf
+Invalid user an password,aafadaf,bjabfj
+Special chars,@@$$!,learning
+Valid user and valid passoword,rahulshettyacademy,learning

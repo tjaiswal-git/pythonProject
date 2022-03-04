@@ -1,0 +1,16 @@
+
+# in ini file
+[atlanta]
+host1 http_port=80 maxRequestsPerChild=808
+host2 http_port=303 maxRequestsPerChild=909
+
+
+# in yml file setting inventory
+atlanta:
+  hosts:
+    host1:
+      http_port: 80
+      maxRequestsPerChild: 808
+    host2:
+      http_port: 303
+      maxRequestsPerChild: 909

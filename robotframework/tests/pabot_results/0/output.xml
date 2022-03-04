@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.10 on win32)" generated="20220218 22:17:54.574" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\Users\tarun.jaiswal\PycharmProjects\pythonProject\robotframework\tests">
+<suite id="s1-s1" name="testDemo1" source="C:\Users\tarun.jaiswal\PycharmProjects\pythonProject\robotframework\tests\testDemo1.robot">
+<test id="s1-s1-t1" name="Select the Form and navigate to child window">
+<kw name="open the browser with the Mortage payment url" library="generic" type="SETUP">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=${exec_path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220218 22:17:54.995" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220218 22:17:54.994" endtime="20220218 22:17:58.357"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220218 22:17:58.358" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/'</msg>
+<status status="PASS" starttime="20220218 22:17:58.357" endtime="20220218 22:18:00.030"/>
+</kw>
+<status status="PASS" starttime="20220218 22:17:54.994" endtime="20220218 22:18:00.030"/>
+</kw>
+<kw name="Fill the login Details and Login Form">
+<arg>${user_name}</arg>
+<arg>${valid_password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220218 22:18:00.034" level="INFO">Typing text 'rahulshettyacademy' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20220218 22:18:00.032" endtime="20220218 22:18:00.535"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220218 22:18:00.536" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20220218 22:18:00.748" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220218 22:18:00.914" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220218 22:18:00.536" endtime="20220218 22:18:00.914"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:input[value='user']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220218 22:18:00.915" level="INFO">Clicking element 'css:input[value='user']'.</msg>
+<status status="PASS" starttime="20220218 22:18:00.915" endtime="20220218 22:18:01.154"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:.modal-body</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220218 22:18:01.155" endtime="20220218 22:18:01.551"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:okayBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220218 22:18:01.551" level="INFO">Clicking button 'id:okayBtn'.</msg>
+<status status="PASS" starttime="20220218 22:18:01.551" endtime="20220218 22:18:01.796"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:okayBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220218 22:18:01.797" level="INFO">Clicking button 'id:okayBtn'.</msg>
+<msg timestamp="20220218 22:18:02.874" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220218 22:18:02.882" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=98.0.4758.102)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0027FDC3+2555331]
+	Ordinal0 [0x002177F1+2127857]
+	Ordinal0 [0x00112CD0+1060048]
+	Ordinal0 [0x0013F3AE+1242030]
+	Ordinal0 [0x00134FB3+1200051]
+	Ordinal0 [0x00157B0C+1342220]
+	Ordinal0 [0x00134984+1198468]
+	Ordinal0 [0x00157C14+1342484]
+	Ordinal0 [0x001675FA+1406458]
+	Ordinal0 [0x00157976+1341814]
+	Ordinal0 [0x001336B6+1193654]
+	Ordinal0 [0x00134546+1197382]
+	GetHandleVerifier [0x00419622+1619522]
+	GetHandleVerifier [0x004C882C+2336844]
+	GetHandleVerifier [0x003123E1+541697]
+	GetHandleVerifier [0x00311443+537699]
+	Ordinal0 [0x0021D18E+2150798]
+	Ordinal0 [0x00221518+2168088]
+	Ordinal0 [0x00221660+2168416]
+	Ordinal0 [0x0022B330+2208560]
+	BaseThreadInitThunk [0x7639F989+25]
+	RtlGetAppContainerNamedObjectPath [0x779274B4+228]
+	RtlGetAppContainerNamedObjectPath [0x77927484+180]
+	(No symbol) [0x00000000]
+</msg>
+<status status="FAIL" starttime="20220218 22:18:01.797" endtime="20220218 22:18:02.882"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>css:.modal-body</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="NOT RUN" starttime="20220218 22:18:02.883" endtime="20220218 22:18:02.883"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>css:select.form-control</arg>
+<arg>teach</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" starttime="20220218 22:18:02.883" endtime="20220218 22:18:02.883"/>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>terms</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220218 22:18:02.883" endtime="20220218 22:18:02.883"/>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<arg>terms</arg>
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<status status="NOT RUN" starttime="20220218 22:18:02.884" endtime="20220218 22:18:02.884"/>
+</kw>
+<status status="FAIL" starttime="20220218 22:18:00.030" endtime="20220218 22:18:02.884"/>
+</kw>
+<status status="FAIL" starttime="20220218 22:17:54.993" endtime="20220218 22:18:02.885">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=98.0.4758.102)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x0027FDC3+2555331]
+	Ordinal0 [0x002177F1+2127857]
+	Ordinal0 [0x00112CD0+1060048]
+	Ordinal0 [0x0013F3AE+1242030]
+	Ordinal0 [0x00134FB3+1200051]
+	Ordinal0 [0x00157B0C+1342220]
+	Ordinal0 [0x00134984+1198468]
+	Ordinal0 [0x00157C14+1342484]
+	Ordinal0 [0x001675FA+1406458]
+	Ordinal0 [0x00157976+1341814]
+	Ordinal0 [0x001336B6+1193654]
+	Ordinal0 [0x00134546+1197382]
+	GetHandleVerifier [0x00419622+1619522]
+	GetHandleVerifier [0x004C882C+2336844]
+	GetHandleVerifier [0x003123E1+541697]
+	GetHandleVerifier [0x00311443+537699]
+	Ordinal0 [0x0021D18E+2150798]
+	Ordinal0 [0x00221518+2168088]
+	Ordinal0 [0x00221660+2168416]
+	Ordinal0 [0x0022B330+2208560]
+	BaseThreadInitThunk [0x7639F989+25]
+	RtlGetAppContainerNamedObjectPath [0x779274B4+228]
+	RtlGetAppContainerNamedObjectPath [0x77927484+180]
+	(No symbol) [0x00000000]
+</status>
+</test>
+<doc>To Valid the login page</doc>
+<status status="FAIL" starttime="20220218 22:17:54.633" endtime="20220218 22:18:02.887"/>
+</suite>
+<status status="FAIL" starttime="20220218 22:17:54.581" endtime="20220218 22:18:02.891"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="testDemo1">Tests.testDemo1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220218 22:17:54.577" level="ERROR">Taking listener 'RobotStackTracer' into use failed: Importing listener 'RobotStackTracer' failed: ModuleNotFoundError: No module named 'RobotStackTracer'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\tarun.jaiswal\PycharmProjects\pythonProject\venv\Scripts\robot.exe
+  C:\Users\tarun.jaiswal\AppData\Local\Programs\Python\Python39\python39.zip
+  C:\Users\tarun.jaiswal\AppData\Local\Programs\Python\Python39\DLLs
+  C:\Users\tarun.jaiswal\AppData\Local\Programs\Python\Python39\lib
+  C:\Users\tarun.jaiswal\AppData\Local\Programs\Python\Python39
+  c:\users\tarun.jaiswal\pycharmprojects\pythonproject\venv
+  c:\users\tarun.jaiswal\pycharmprojects\pythonproject\venv\lib\site-packages</msg>
+</errors>
+</robot>

@@ -1,0 +1,27 @@
+---
+hosts: web
+tasks:
+  - name: Install, configure and start apache
+    block:
+      - name: Install httpd and memcahced
+        yum:
+          name:
+            - httpd
+            - memcached
+          state: present
+
+      - name: apply the config
+        template:
+          src: /etc/foo
+          dest: /etc/srv/conf
+
+      - name: start the service
+        service:
+          name: foo
+          state: started
+          enabled: True
+
+    when: ansible_facts['distributions'] == 'CentOS'
+    become: true
+    become_user: root
+    ingore_error: yes

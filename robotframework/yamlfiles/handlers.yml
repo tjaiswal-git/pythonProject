@@ -1,0 +1,18 @@
+- name: Template configuration file
+  ansible.builtin.template:
+    src: template.j2
+    dest: /etc/foo.conf
+  notify:
+    - Restart memcached
+    - Restart apache
+
+  handlers:
+    - name: Restart memcached
+      ansible.builtin.service:
+        name: memcached
+        state: restarted
+
+    - name: Restart apache
+      ansible.builtin.service:
+        name: apache
+        state: restarted

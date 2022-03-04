@@ -1,0 +1,16 @@
+==============================================================================
+Tests                                                                         
+==============================================================================
+Tests.testDemo7 :: To Valid the login page                                    
+==============================================================================
+Validate UnSuccessful Login                                           | PASS |
+------------------------------------------------------------------------------
+Validate cards display in the shopping page                           | PASS |
+------------------------------------------------------------------------------
+Tests.testDemo7 :: To Valid the login page                            | PASS |
+2 tests, 2 passed, 0 failed
+==============================================================================
+Tests                                                                 | PASS |
+2 tests, 2 passed, 0 failed
+==============================================================================
+Output:  C:\Users\tarun.jaiswal\PycharmProjects\pythonProject\robotframework\tests\pabot_results\5\output.xml

@@ -1,0 +1,42 @@
+- name: add users
+  user:
+    name: "{{ item }}"
+    state: present
+    groups: "wheel"
+  loop:
+    - testUser1
+    - testUser2
+    - testUser3
+
+
+- name: add several users
+  user:
+    name: "{{ item.name }}"
+    state: present
+    groups: "{{ item.groups }}"
+  loop:
+    - { name: 'testUser1', groups: 'wheel'}
+    - { name: 'testUser2', groups: 'root'}
+
+# iterating over dictionary
+
+- name: using dic2items
+  debug:
+    msg: "{{ item.key - item.value }}"
+  loop: "{{ tag_data | dict2items }}"
+  vars:
+    tag_data:
+      Enviorment: dev
+      Application: payment
+
+# pausing a loop
+
+- name: pausing a loop
+  digital_ocean:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - server1
+    - server2
+  loop_control:
+    pause: 3
